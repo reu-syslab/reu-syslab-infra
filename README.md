@@ -26,3 +26,9 @@ Multi-zone infrastructure lab for hands-on network engineering, automation, and 
 ---
 
 **Lab started: 26.05.2025**
+
+
+
+## License
+
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
