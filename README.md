@@ -8,7 +8,7 @@ Multi-zone infrastructure lab for hands-on network engineering, automation, and 
 
 ## Project structure
 
-- [Architecture](docs/architecture.md): main goals, topology, hardware, implementation stages.
+- [Hardware](docs/hardware-list.md): main goals, topology, hardware, implementation stages.
 - [Zones](docs/zones.md): description of LAN, DMZ, Isolated segments.
 - [Monitoring](docs/monitoring.md): Zabbix integration, checks, alerting.
 - [Scenarios](docs/scenarios.md): practical tasks, troubleshooting, test cases.
@@ -16,7 +16,8 @@ Multi-zone infrastructure lab for hands-on network engineering, automation, and 
 - [Ansible](ansible/): playbooks for automated deployment (future).
 - [Terraform](terraform/): infrastructure as code configs (future).
 - [Diagrams & images](img/): visual schemes, network topology.
-
+- [DNS-infra](network/dns-setup.md):
+- [Vlan](network/vlan-topology.md):
 ## Quickstart
 
 1. See [docs/architecture.md](docs/architecture.md) for full description and implementation plan.
@@ -24,6 +25,36 @@ Multi-zone infrastructure lab for hands-on network engineering, automation, and 
 3. All tasks and progress tracked in [docs/scenarios.md](docs/scenarios.md).
 
 ---
+
+
+## О проекте
+
+Здесь документируется и развивается архитектура лаборатории Ruven"reu-syslab.dev":  
+— Сегментация сети через VLAN  
+— DNS (Bind9/Unbound)  
+— FortiGate + MikroTik  
+— Автоматизация, мониторинг, резервное копирование  
+— Чеклисты и грабли, которые реально встречаются
+
+---
+
+*Для связи и вопросов: [tg:@Ruven_007]*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 **Lab started: 26.05.2025**
 
