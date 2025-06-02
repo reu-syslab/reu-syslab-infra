@@ -1,0 +1,27 @@
+# Отключаем временные и текстовые файлы
+*.txt
+*.log
+*.bak
+*.swp
+*.tmp
+
+# Файлы ОС
+.DS_Store
+Thumbs.db
+
+# Py/IDE/VS Code stuff
+__pycache__/
+.idea/
+.vscode/
+*.code-workspace
+
+# Бэкапы и мусор
+*~
+*.old
+
+# Игнорировать Obsidian vault service файлы (если будешь использовать)
+.obsidian/
+
+# Игнорировать Terraform/Ansible временные файлы
+*.tfstate
+*.retry
