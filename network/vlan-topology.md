@@ -14,6 +14,7 @@
 - `vlan30_lab` (10.0.2.0/24) — лаборатория/DNS/мониторинг
 - `vlan40_wifi` (10.0.4.0/24) — Wi-Fi-зона через MikroTik (internal5)
 
+Пример создания vlan через CLI console 
 
 ```bash
 FortiGate-80F # config system interface
@@ -39,6 +40,29 @@ FortiGate-80F (vlan10_mgmt) #
 ```
 
 
+Пример создание через GUI web interface
+
+GUI->Network->Interface->Create new->Interface 
+ 
+Name: vlan20_srv
+
+Type: VLAN
+
+VLAN protocol 802.1Q
+
+Interface internal1
+
+VLAN ID 20
+
+IP/Netmask 10.0.1.0/255.255.255.0
+
+Administrative Access PING 
+
+OK
+
+все остальное можно настроить позже
+
+
 ### Почему именно так:
 - **Один физический uplink (internal1)**: удобно вести “транк” (trunk) — все VLAN трафик идёт по одному кабелю до коммутатора (RB5009).
 - Это **облегчает масштабирование** — добавляешь новые VLAN логически, не меняя физику.
@@ -56,28 +80,34 @@ FortiGate-80F (vlan10_mgmt) #
 ```shell
 # Пример для ether1 — trunk-порт с FortiGate
 
+```bash
 /interface vlan
 add name=vlan10_mgmt vlan-id=10 interface=ether1
 add name=vlan20_srv  vlan-id=20 interface=ether1
 add name=vlan30_lab  vlan-id=30 interface=ether1
+```
 
 # Bridge для каждой VLAN (или напрямую назначить порт)
+```bash
 /interface bridge
 add name=bridge_mgmt
 add name=bridge_srv
 add name=bridge_lab
-
+```
 # Привязываем физические порты к нужному bridge
+```bash
 /interface bridge port
 add bridge=bridge_mgmt interface=vlan10_mgmt
 add bridge=bridge_srv  interface=vlan20_srv
 add bridge=bridge_lab  interface=vlan30_lab
-
+```
 
 # Добавить физические LAN-порты для устройств
+```bash
 add bridge=bridge_mgmt interface=ether2
 add bridge=bridge_srv  interface=ether3
 add bridge=bridge_lab  interface=ether4
+```
 
 Почему так:
 Вся сегментация проходит через Fortinet — там проще вести firewall и межзоновые политики.
