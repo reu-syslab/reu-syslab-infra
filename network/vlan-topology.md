@@ -77,10 +77,10 @@ OK
 
 ### Пример конфигурации (CLI MikroTik):
 
-```shell
+
 # Пример для ether1 — trunk-порт с FortiGate
 
-```bash
+```shell
 /interface vlan
 add name=vlan10_mgmt vlan-id=10 interface=ether1
 add name=vlan20_srv  vlan-id=20 interface=ether1
