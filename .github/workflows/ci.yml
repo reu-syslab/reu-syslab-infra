@@ -1,0 +1,35 @@
+name: CI — Infrastructure Checks
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    name: Проверка структуры и файлов
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 📥 Checkout репозитория
+      uses: actions/checkout@v3
+
+    - name: 🧪 Проверка Markdown
+      uses: DavidAnson/markdownlint-cli2-action@v13
+      with:
+        globs: |
+          **/*.md
+
+    - name: 🧪 Проверка YAML
+      uses: ibiqlik/action-yamllint@v3
+      with:
+        config_file: .yamllint.yaml
+
+    - name: 🧪 Проверка DNS-зон (named-checkzone)
+      run: |
+        sudo apt update && sudo apt install -y bind9-utils
+        for zone in network/zones/*.example; do
+          echo "Проверка зоны: $zone"
+          named-checkzone reu-syslab.dev $zone
+        done
