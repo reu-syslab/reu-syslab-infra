@@ -1,0 +1,17 @@
+
+$TTL 86400
+@   IN  SOA     ns1.reu-syslab.dev. admin.reu-syslab.dev. (
+                2025062001 ; Serial
+                3600       ; Refresh
+                1800       ; Retry
+                1209600    ; Expire
+                86400 )    ; Minimum
+
+    IN  NS      ns1.reu-syslab.dev.
+    IN  NS      ns2.reu-syslab.dev.
+
+ns1 IN  A       10.0.2.103
+ns2 IN  A       10.0.2.104
+zabbix IN A     10.0.2.101
+grafana IN A    10.0.2.102
+vpn IN  A       10.0.10.10

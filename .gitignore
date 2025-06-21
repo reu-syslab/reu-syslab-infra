@@ -14,7 +14,11 @@ __pycache__/
 .idea/
 .vscode/
 *.code-workspace
-
+*.key
+*.pem
+*.backup
+vault_pass
+secrets.env
 # Бэкапы и мусор
 *~
 *.old
