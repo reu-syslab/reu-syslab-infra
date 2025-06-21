@@ -1,4 +1,4 @@
-name: CI — Infrastructure Checks
+name: CI — Infrastructure Full Checks
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
 
 jobs:
   validate:
-    name: Проверка структуры и файлов
+    name: Проверка файловой структуры и конфигов
     runs-on: ubuntu-latest
 
     steps:
@@ -33,3 +33,19 @@ jobs:
           echo "Проверка зоны: $zone"
           named-checkzone reu-syslab.dev $zone
         done
+
+    - name: 🧪 Проверка Terraform
+      run: |
+        sudo apt-get install -y unzip wget
+        wget https://releases.hashicorp.com/terraform/1.7.5/terraform_1.7.5_linux_amd64.zip
+        unzip terraform_1.7.5_linux_amd64.zip
+        sudo mv terraform /usr/local/bin/
+        cd terraform
+        terraform fmt -check -recursive
+        terraform validate
+
+    - name: 🧪 Проверка Ansible Lint
+      run: |
+        sudo apt update && sudo apt install -y python3-pip
+        pip install ansible ansible-lint
+        ansible-lint ansible/
