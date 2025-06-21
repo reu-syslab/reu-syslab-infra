@@ -29,3 +29,5 @@ secrets.env
 # Игнорировать Terraform/Ansible временные файлы
 *.tfstate
 *.retry
+node_modules/
+node_modules/
