@@ -1,0 +1,27 @@
+{
+  "name": "reu-syslab-infra",
+  "version": "1.0.0",
+  "description": "Multi-zone infrastructure lab for hands-on network engineering, automation, and Fortinet NSE4 exam preparation. Includes segmentation (LAN, DMZ, Isolated), monitoring (Zabbix), automation (Ansible, Terraform), and real hardware (MikroTik, Fortinet, Proxmox). Documentation, test scenarios, and real-world troubleshooting are included.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reu-syslab/reu-syslab-infra.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reu-syslab/reu-syslab-infra/issues"
+  },
+  "homepage": "https://github.com/reu-syslab/reu-syslab-infra#readme",
+  "devDependencies": {
+    "markdownlint-cli": "^0.32.2",
+    "prettier": "^3.5.3"
+  }
+}

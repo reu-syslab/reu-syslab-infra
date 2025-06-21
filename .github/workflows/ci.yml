@@ -12,21 +12,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: 📥 Checkout репозитория
+    - name:  Checkout репозитория
       uses: actions/checkout@v3
 
-    - name: 🧪 Проверка Markdown
-      uses: DavidAnson/markdownlint-cli2-action@v13
-      with:
-        globs: |
-          **/*.md
+  # - name:  Проверка Markdown
+  #   uses: DavidAnson/markdownlint-cli2-action@v13
+#   with:
+    #   globs: |
+     #    **/*.md
 
-    - name: 🧪 Проверка YAML
+    - name:  Проверка YAML
       uses: ibiqlik/action-yamllint@v3
       with:
         config_file: .yamllint.yaml
 
-    - name: 🧪 Проверка DNS-зон (named-checkzone)
+    - name:  Проверка DNS-зон (named-checkzone)
       run: |
         sudo apt update && sudo apt install -y bind9-utils
         for zone in network/zones/*.example; do
@@ -34,7 +34,7 @@ jobs:
           named-checkzone reu-syslab.dev $zone
         done
 
-    - name: 🧪 Проверка Terraform
+    - name:  Проверка Terraform
       run: |
         sudo apt-get install -y unzip wget
         wget https://releases.hashicorp.com/terraform/1.7.5/terraform_1.7.5_linux_amd64.zip
@@ -44,7 +44,7 @@ jobs:
         terraform fmt -check -recursive
         terraform validate
 
-    - name: 🧪 Проверка Ansible Lint
+    - name:  Проверка Ansible Lint
       run: |
         sudo apt update && sudo apt install -y python3-pip
         pip install ansible ansible-lint

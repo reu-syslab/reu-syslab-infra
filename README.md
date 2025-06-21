@@ -1,6 +1,6 @@
 # reu-syslab-infra
-Multi-zone infrastructure lab for hands-on network engineering, automation, and Fortinet NSE4 exam preparation. Includes segmentation (LAN, DMZ, Isolated), monitoring (Zabbix), automation (Ansible, Terraform), and real hardware (MikroTik, Fortinet, Proxmox). Documentation, test scenarios, and real-world troubleshooting are included.
 
+Multi-zone infrastructure lab for hands-on network engineering, automation, and Fortinet NSE4 exam preparation. Includes segmentation (LAN, DMZ, Isolated), monitoring (Zabbix), automation (Ansible, Terraform), and real hardware (MikroTik, Fortinet, Proxmox). Documentation, test scenarios, and real-world troubleshooting are included.
 
 # reu-syslab-infra
 
@@ -18,6 +18,7 @@ Multi-zone infrastructure lab for hands-on network engineering, automation, and 
 - [Diagrams & images](img/): visual schemes, network topology.
 - [DNS-infra](network/dns-setup.md):
 - [Vlan](network/vlan-topology.md):
+
 ## Quickstart
 
 1. See [docs/architecture.md](docs/architecture.md) for full description and implementation plan.
@@ -25,7 +26,6 @@ Multi-zone infrastructure lab for hands-on network engineering, automation, and 
 3. All tasks and progress tracked in [docs/scenarios.md](docs/scenarios.md).
 
 ---
-
 
 ## О проекте
 
@@ -38,27 +38,9 @@ Multi-zone infrastructure lab for hands-on network engineering, automation, and 
 
 ---
 
-*Для связи и вопросов: [tg:@Ruven_007]*
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+_Для связи и вопросов: [tg:@Ruven_007]_
 
 **Lab started: 26.05.2025**
-
-
 
 ## License
 
