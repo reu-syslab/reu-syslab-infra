@@ -15,12 +15,6 @@ jobs:
     - name:  Checkout репозитория
       uses: actions/checkout@v3
 
-  # - name:  Проверка Markdown
-  #   uses: DavidAnson/markdownlint-cli2-action@v13
-#   with:
-    #   globs: |
-     #    **/*.md
-
     - name:  Проверка YAML
       uses: ibiqlik/action-yamllint@v3
       with:
