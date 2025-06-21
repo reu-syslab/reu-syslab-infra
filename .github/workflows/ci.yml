@@ -8,6 +8,7 @@ on:
   pull_request:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   validate:
@@ -15,15 +16,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Checkout
+      - name: Checkout
         uses: actions/checkout@v3
 
-      - name: 🧪 Проверка YAML
+      - name: Проверка YAML
         uses: ibiqlik/action-yamllint@v3
         with:
           config_file: .yamllint.yaml
 
-      - name: 🧪 Форматирование Markdown через Prettier
+      - name: Форматирование Markdown через Prettier
         run: |
           npm install -g prettier
           prettier --check "**/*.md"
